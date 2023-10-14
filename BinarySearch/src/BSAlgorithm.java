@@ -12,7 +12,8 @@ public class BSAlgorithm {
         target = scn.nextInt();
 
         while (min <= max) {
-            int mid = (min + max) / 2;
+            // int mid = (min + max) / 2; (might be possible that min+max will exceed the range of integer)
+            int mid = min + (max - min) / 2;
             if (eles[mid] == target) {
                 System.out.println("Present at index: " + mid);
                 return;
