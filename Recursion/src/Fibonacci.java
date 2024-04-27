@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 public class Fibonacci {
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Enter nth fibonacci num to find: ");
-        int num = scn.nextInt();
-        int fab = printNthFibo(num);
-        System.out.println(fab);
+        // print fibonacci using recursion
+        int result = getFibonacci(6);
+        System.out.println(result);
     }
 
-    static int printNthFibo(int num) {
-        if (num < 2) return num;
-        return printNthFibo(num - 1) + printNthFibo(num - 2);
+    static int getFibonacci(int n) {
+        if (n <= 0) return 0;
+        if (n == 1) return 1;
+
+        return getFibonacci(n - 2) + getFibonacci(n - 1);
     }
 }
